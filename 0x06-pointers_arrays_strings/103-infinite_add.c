@@ -1,73 +1,54 @@
 #include "main.h"
 
 /**
- * rev_string - reverse array
- * @n: integer params
- * Return: 0
- */
-
-void rev_string(char *n)
-{
-	int i = 0;
-	int j = 0;
-	char temp;
-
-	while (*(n + i) != '\0')
-	{
-		i++;
-	}
-	i--;
-
-	for (j = 0; j < i; j++, i--)
-	{
-		temp = *(n + j);
-		*(n + j) = *(n + i);
-		*(n + i) = temp;
-	}
-}
-
-/**
- * infinite_add - add 2 numbers together
- * @n1: text representation of 1st number to add
- * @n2: text representation of 2nd number to add
- * @r: pointer to buffer
+ * infinite_add - adds two umbers
+ * @n1: first number
+ * @n2: second number
+ * @r: result
  * @size_r: buffer size
- * Return: pointer to calling function
+ * Return:or 0 r
+ * owned by: SmoxHAkim
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, i = 0, j = 0, digits = 0;
-	int val1 = 0, val2 = 0, temp_tot = 0;
+	int u, v, w, x, y, z;
 
-	while (*(n1 + i) != '\0')
-		i++;
-	while (*(n2 + j) != '\0')
-		j++;
-	i--;
-	j--;
-	if (j >= size_r || i >= size_r)
+	for (u = 0; n1[u]; u++)
+		;
+	for (v = 0; n2[v]; v++)
+		;
+	if (u > size_r || v > size_r)
 		return (0);
-	while (j >= 0 || i >= 0 || overflow == 1)
-	{
-		if (i < 0)
-			val1 = 0;
-		else
-			val1 = *(n1 + i) - '0';
-		if (j < 0)
-			val2 = 0;
-		else
-			val2 = *(n2 + j) - '0';
-		temp_tot = val1 + val2 + overflow;
-		if (temp_tot >= 10)
-			overflow = 1;
-		else
-			overflow = 0;
-		if (digits >= (size_r - 1))
-			return (0);
-		*(r + digits) = (temp_tot % 10) + '0';
-		digits++;
-		j--;
-		i--;
-	}
 
+	y = 0;
+	for (u -= 1, v -= 1, w = 0; w < size_r - 1; u--, v--, w++)
+	{
+		z = y;
+		if (u >= 0)
+		{
+			z += n1[u] - '0';
+		}
+		if (v >= 0)
+		{
+			z += n2[v] - '0';
+		}
+		if (u < 0 && v < 0 && z == 0)
+		{
+			break;
+		}
+		y = z / 10;
+		r[w] = z % 10 + '0';
+	}
+	r[w] = '\0';
+	if (u >= 0 || v >= 0 || y)
+	{
+		return (0);
+	}
+	for (w -= 1, x = 0; x < w; w--, x++)
+	{
+		y = r[w];
+		r[w] = r[x];
+		r[x] = y;
+	}
+	return (r);
+}
