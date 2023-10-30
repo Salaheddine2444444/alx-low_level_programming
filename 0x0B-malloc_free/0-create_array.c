@@ -7,7 +7,7 @@
  * @size: size of the int
  * @c: the input char
  * Return: NULL or parr
- * owned by: SmoxHakim
+ * owned by: Sinco
  */
 
 char *create_array(unsigned int size, char c)
