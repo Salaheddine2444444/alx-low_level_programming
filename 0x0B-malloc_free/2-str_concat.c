@@ -6,7 +6,7 @@
  * @s1: first str
  * @s2: second str
  * Return: NULL or ptr
- * owned by: SmoxHakim
+ * owned by: Sinco
  */
 char *str_concat(char *s1, char *s2)
 {
