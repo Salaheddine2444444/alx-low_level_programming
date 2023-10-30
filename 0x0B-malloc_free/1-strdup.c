@@ -6,7 +6,7 @@
  * *_strdup - copy of the string
  * @str: the string input
  * Return: NULL or pointer
- * owned by: SmoxHakim
+ * owned by: Sinco
  */
 
 char *_strdup(char *str)
