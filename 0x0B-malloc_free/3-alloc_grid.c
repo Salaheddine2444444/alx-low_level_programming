@@ -7,7 +7,7 @@
  * @width: the width
  * @height: the height
  * Return: NULL or ptr
- * owned by: SmoxHakim
+ * owned by: sinco
 */
 
 int **alloc_grid(int width, int height)
