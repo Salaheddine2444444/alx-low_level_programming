@@ -6,7 +6,7 @@
  * @name: the name
  * @age: the age
  * @owner: the owner
- * owned by: SmoxHakim
+ * owned by: Sinco
  */
 
 struct dog
